@@ -111,3 +111,16 @@ jobs:
       with:
         name: OpenWrt
         path: openwrt/bin
+
+    - name : Upload passwall
+      uses: actions/upload-artifact@master
+      with:
+        name: passwall-all-ipk
+        path: |
+          openwrt/bin/packages/x86_64/small/*.ipk
+          openwrt/bin/packages/x86_64/kenzo/*.ipk
+          openwrt/bin/packages/x86_64/base/dns2socks*.ipk
+          openwrt/bin/packages/x86_64/base/ipt2socks*.ipk
+          openwrt/bin/packages/x86_64/base/microsocks*.ipk
+          openwrt/bin/packages/x86_64/base/pdnsd-alt*.ipk
+          openwrt/bin/packages/x86_64/base/simple-obfs*.ipk
